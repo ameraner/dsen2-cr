@@ -1,7 +1,7 @@
 # Cloud removal in Sentinel-2 imagery using a deep residual neural network and SAR-optical data fusion
 ![Paper preview](doc/paper.JPG)
-> Example results from the final setup of DSen2-CR using the CARL loss. Left is the input cloudy image, middle is the predicted image, left is the cloud-free target image.
->
+> _Example results from the final setup of DSen2-CR using the CARL loss. Left is the input cloudy image, middle is the predicted image, left is the cloud-free target image._
+----
 This repository contains the code and models for the paper
 > Meraner, A., Ebel, P., Zhu, X. X., & Schmitt, M. (2020). Cloud removal in Sentinel-2 imagery using a deep residual neural network and SAR-optical data fusion. ISPRS Journal of Photogrammetry and Remote Sensing, 166, 333-346.
 
@@ -24,6 +24,7 @@ keywords = "Cloud removal, Optical imagery, SAR-optical, Data fusion, Deep learn
 ```
 
 # Code
+
 ---
 
 **NOTE**
