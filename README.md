@@ -1,5 +1,8 @@
 # Cloud removal in Sentinel-2 imagery using a deep residual neural network and SAR-optical data fusion
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cloud-removal-in-sentinel-2-imagery-using-a/cloud-removal-on-sen12ms-cr)](https://paperswithcode.com/sota/cloud-removal-on-sen12ms-cr?p=cloud-removal-in-sentinel-2-imagery-using-a)
+
 ![Paper preview](doc/paper.JPG)
+>
 > _Example results from the final setup of DSen2-CR using the CARL loss. Left is the input cloudy image, middle is the predicted image, left is the cloud-free target image._
 ----
 This repository contains the code and models for the paper
