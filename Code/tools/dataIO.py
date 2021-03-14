@@ -25,9 +25,17 @@ def get_train_val_test_filelists(listpath):
         reader = csv.reader(f, delimiter='\t')
         filelist = list(reader)
 
-    train_filelist = [f[:] for f in filelist if f[0] == '1']
-    val_filelist = [f[:] for f in filelist if f[0] == '2']
-    test_filelist = [f[:] for f in filelist if f[0] == '3']
+    train_filelist = []
+    val_filelist = []
+    test_filelist = []
+    for f in filelist:
+        line_entries = f[0].split(sep=", ")
+        if line_entries[0] == '1':
+            train_filelist.append(line_entries)
+        if line_entries[0] == '2':
+            val_filelist.append(line_entries)
+        if line_entries[0] == '3':
+            test_filelist.append(line_entries)
 
     return train_filelist, val_filelist, test_filelist
 
@@ -215,7 +223,7 @@ class DataGenerator(keras.utils.Sequence):
                  crop_size=128,
                  clip_min=None,
                  clip_max=None,
-                 folder_input='./',
+                 input_data_folder='./',
                  use_cloud_mask=True,
                  max_val_sar=5,
                  cloud_threshold=0.2
@@ -240,7 +248,7 @@ class DataGenerator(keras.utils.Sequence):
         self.clip_min = clip_min
         self.clip_max = clip_max
 
-        self.folder_input = folder_input
+        self.input_data_folder = input_data_folder
         self.use_cloud_mask = use_cloud_mask
         self.cloud_threshold = cloud_threshold
 
@@ -343,7 +351,7 @@ class DataGenerator(keras.utils.Sequence):
 
     def get_data_image(self, ID, data_type, paramx, paramy):
 
-        data_path = os.path.join(self.folder_input, ID[data_type], ID[4]).lstrip()
+        data_path = os.path.join(self.input_data_folder, ID[data_type], ID[4]).lstrip()
 
         if data_type == 2 or data_type == 3:
             data_image = self.get_opt_image(data_path, paramx, paramy)
