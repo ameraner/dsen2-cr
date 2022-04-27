@@ -89,8 +89,11 @@ An example is provided in the repository. The first column of each entry is an i
 `2` a validation sample, and `3` a test sample. The second, third, and fourth column indicate the subfolder names where the
 Sentinel-1, Sentinel-2 Cloudfree, and Sentinel-2 Cloudy images are located respectively. The fifth column finally states the 
 filename of the image, that must be the same in the three folders.
-The three subfolders must be located in the path defined by the variable `input_data_folder` in the main script.
+The three subfolders must be located in the path defined by the variable `input_data_folder` in the main script.  
 
+If you wish to download the full list of patches used by this work, including the indication of the train/val/test split, 
+you can find the full csv file [here](https://drive.google.com/file/d/116wlHxio-HHfpK9A6awTpQKcdgFhnXwc/view?usp=sharing)
+ (you can ignore the last two columns in the file).
 # Trained Model Checkpoints
 The full DSen2-CR model trained by optimizing the CARL loss can be downloaded from Google Drive [here](https://drive.google.com/file/d/1L3YUVOnlg67H5VwlgYO9uC9iuNlq7VMg/view?usp=sharing).
 
@@ -99,12 +102,14 @@ can be found [here](https://drive.google.com/file/d/1VHZa5-lX68mA2FbHeCiQsUq13oE
 
 
 # Dataset
-The dataset used in this work is called SEN12MS-CR. It is now publicly available for download [here](https://mediatum.ub.tum.de/1554803).
+The dataset used in this work is called SEN12MS-CR. A slightly reprocessed version of it
+is publicly available for download [here](https://mediatum.ub.tum.de/1554803).
 If you use this dataset for your research, please cite our related IEEE TGRS paper 
 > Ebel, P., Meraner, A., Schmitt, M., & Zhu, X. X. (2020). Multisensor Data Fusion for Cloud Removal in Global and All-Season Sentinel-2 Imagery. IEEE Transactions on Geoscience and Remote Sensing.
 
 describing the dataset release. The paper can be accessed
-for free at [the IEEE Explore page](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9211498).
+for free at [the IEEE Explore page](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9211498). See 
+also a related website [here](https://patricktum.github.io/cloud_removal/).
 ```bibtex
 @article{Ebel2020,
   author={P. {Ebel} and A. {Meraner} and M. {Schmitt} and X. X. {Zhu}},
@@ -115,8 +120,22 @@ for free at [the IEEE Explore page](https://ieeexplore.ieee.org/stamp/stamp.jsp?
   number={},
   pages={1-13},
   doi={10.1109/TGRS.2020.3024744}}
-```
+```  
+---
 
+**NOTE**
+
+The SEN12MS-CR dataset described above is a reprocessed version of the one used in this work.  
+The main difference is that the one from this work was in the WGS84 coordinate system, 
+whereas the released one was a reprocessing with a UTM CRS transform (in order to make the patches
+co-registered with available semantic segmentations and scene-wise labels - see paper). The differences will most
+probably not affect the network performance, and the pre-trained models can still be used.
+
+For this same reason, the filenames and folder structure in the released dataset do not match 
+the datasetfilelist provided in the section "Dataset Paths" above. The adaptation
+of the code to use this dataset should however be rather simple (Pull Requests are welcome :)).
+
+---
 # Credits
 Although now heavily modified and expanded, this code was originally based on the code by [Charis Lanaras](https://github.com/lanha)
 available in [the DSen2 repo](https://github.com/lanha/DSen2). Also the network used by this work is, as the name suggests, 
