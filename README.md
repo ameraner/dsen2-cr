@@ -1,5 +1,6 @@
 # Cloud removal in Sentinel-2 imagery using a deep residual neural network and SAR-optical data fusion
-[![BPA](https://img.shields.io/badge/Winner-ISPRS%20Best%20Paper%20Award%202020-brightgreen)](https://www.journals.elsevier.com/isprs-journal-of-photogrammetry-and-remote-sensing/news/the-u-v-helava-award-best-paper-volumes-159-170-2020)
+[![BPA](https://img.shields.io/badge/Winner-ISPRS%20U.V.%20Helava%20Award%202020--2021-brightgreen)](https://www.isprs.org/society/awards/helava/2020_2021award.aspx)
+[![BPA](https://img.shields.io/badge/Winner-ISPRS%20JPRS%20Best%20Paper%20Award%202020-brightgreen)](https://www.journals.elsevier.com/isprs-journal-of-photogrammetry-and-remote-sensing/news/the-u-v-helava-award-best-paper-volumes-159-170-2020)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cloud-removal-in-sentinel-2-imagery-using-a/cloud-removal-on-sen12ms-cr)](https://paperswithcode.com/sota/cloud-removal-on-sen12ms-cr?p=cloud-removal-in-sentinel-2-imagery-using-a)
 
@@ -10,9 +11,10 @@
 This repository contains the code and models for the paper
 > Meraner, A., Ebel, P., Zhu, X. X., & Schmitt, M. (2020). Cloud removal in Sentinel-2 imagery using a deep residual neural network and SAR-optical data fusion. ISPRS Journal of Photogrammetry and Remote Sensing, 166, 333-346.
 
-The open-access paper is available at [the Elsevier ISPRS page](https://doi.org/10.1016/j.isprsjprs.2020.05.013).
+The **open-access paper** is available at [the Elsevier ISPRS page](https://doi.org/10.1016/j.isprsjprs.2020.05.013).
 
-The paper [won the ISPRS 2020 Best Paper Award](https://www.journals.elsevier.com/isprs-journal-of-photogrammetry-and-remote-sensing/news/the-u-v-helava-award-best-paper-volumes-159-170-2020), and is therefore nominated for the 2020-2024 U. V. Helava Award.
+The paper [won the ISPRS 2020 Best Paper Award](https://www.journals.elsevier.com/isprs-journal-of-photogrammetry-and-remote-sensing/news/the-u-v-helava-award-best-paper-volumes-159-170-2020), and 
+and then went on to [win the U.V. Helava Award as the best paper for the period 2020-2021](https://www.isprs.org/society/awards/helava/2020_2021award.aspx).
 
 If you use this code, models or dataset for your research, please cite us accordingly:
 ```bibtex
@@ -91,9 +93,11 @@ Sentinel-1, Sentinel-2 Cloudfree, and Sentinel-2 Cloudy images are located respe
 filename of the image, that must be the same in the three folders.
 The three subfolders must be located in the path defined by the variable `input_data_folder` in the main script.  
 
-If you wish to download the full list of patches used by this work, including the indication of the train/val/test split, 
-you can find the full csv file [here](https://drive.google.com/file/d/116wlHxio-HHfpK9A6awTpQKcdgFhnXwc/view?usp=sharing)
- (you can ignore the last two columns in the file).
+If you wish to download the full list of patches including the indication of the train/val/test split, 
+you can find the full csv files [here](https://syncandshare.lrz.de/getlink/fiX8Gv8SKQS8QMZrtXWZi5Rr/supplementary_SEN12MSCR) 
+(see train_val_test_patches.csv).
+Please see the Dataset section below for more information.
+
 # Trained Model Checkpoints
 The full DSen2-CR model trained by optimizing the CARL loss can be downloaded from Google Drive [here](https://drive.google.com/file/d/1L3YUVOnlg67H5VwlgYO9uC9iuNlq7VMg/view?usp=sharing).
 
@@ -125,15 +129,16 @@ also a related website [here](https://patricktum.github.io/cloud_removal/).
 
 **NOTE**
 
-The SEN12MS-CR dataset described above is a reprocessed version of the one used in this work.  
+The published SEN12MS-CR dataset described above is a reprocessed version of the one used in this work.  
+
 The main difference is that the one from this work was in the WGS84 coordinate system, 
 whereas the released one was a reprocessing with a UTM CRS transform (in order to make the patches
 co-registered with available semantic segmentations and scene-wise labels - see paper). The differences will most
 probably not affect the network performance, and the pre-trained models can still be used.
 
-For this same reason, the filenames and folder structure in the released dataset do not match 
-the datasetfilelist provided in the section "Dataset Paths" above. The adaptation
-of the code to use this dataset should however be rather simple (Pull Requests are welcome :)).
+The csv files to be used as inputs for the model linked in the "Dataset Paths" section above have been adapted
+to match the filenaming convention used in the published reprocessed dataset. Note that due to the reprocessing, the train/val/test 
+splits are not identical to the ones used for the paper - the differences, however, are minor.
 
 ---
 # Credits
