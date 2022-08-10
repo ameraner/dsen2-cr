@@ -140,6 +140,13 @@ The csv files to be used as inputs for the model linked in the "Dataset Paths" s
 to match the filenaming convention used in the published reprocessed dataset. Note that due to the reprocessing, the train/val/test 
 splits are not identical to the ones used for the paper - the differences, however, are minor.
 
+
+# PyTorch Model
+
+If you're interested in a PyTorch implementation of the DSen2-CR model, the according class is available in 
+[Code/dsen2cr_pytorch_model.py](https://github.com/ameraner/dsen2-cr/blob/main/Code/dsen2cr_pytorch_model.py) 
+(thanks to [Patrick Ebel](https://github.com/PatrickTUM)).
+
 ---
 # Credits
 Although now heavily modified and expanded, this code was originally based on the code by [Charis Lanaras](https://github.com/lanha)
