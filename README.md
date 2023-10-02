@@ -140,6 +140,8 @@ The csv files to be used as inputs for the model linked in the "Dataset Paths" s
 to match the filenaming convention used in the published reprocessed dataset. Note that due to the reprocessing, the train/val/test 
 splits are not identical to the ones used for the paper - the differences, however, are minor.
 
+@CodyKurpanek created a Jupyter Notebook that downloads and processes the public SEN12MS-CR dataset in order to fit the expected structure by this code.
+The notebook can be found under [Data/unpack_dataset.ipynb](https://github.com/ameraner/dsen2-cr/blob/main/Data/unpack_dataset.ipynb).
 
 # PyTorch Model
 
