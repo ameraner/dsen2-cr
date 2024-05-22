@@ -94,8 +94,7 @@ filename of the image, that must be the same in the three folders.
 The three subfolders must be located in the path defined by the variable `input_data_folder` in the main script.  
 
 If you wish to download the full list of patches including the indication of the train/val/test split, 
-you can find the full csv files [here](https://syncandshare.lrz.de/getlink/fiX8Gv8SKQS8QMZrtXWZi5Rr/supplementary_SEN12MSCR) 
-(see train_val_test_patches.csv).
+you can find the full csv files [here]([https://syncandshare.lrz.de/getlink/fiX8Gv8SKQS8QMZrtXWZi5Rr/supplementary_SEN12MSCR](https://drive.google.com/file/d/1e1u1ARVf4rRYugiyI-pYrVcK29drvIq5/view?usp=sharing)).
 Please see the Dataset section below for more information.
 
 # Trained Model Checkpoints
