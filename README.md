@@ -2,7 +2,11 @@
 [![BPA](https://img.shields.io/badge/Winner-ISPRS%20U.V.%20Helava%20Award%202020--2021-brightgreen)](https://www.isprs.org/society/awards/helava/2020_2021award.aspx)
 [![BPA](https://img.shields.io/badge/Winner-ISPRS%20JPRS%20Best%20Paper%20Award%202020-brightgreen)](https://www.journals.elsevier.com/isprs-journal-of-photogrammetry-and-remote-sensing/news/the-u-v-helava-award-best-paper-volumes-159-170-2020)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cloud-removal-in-sentinel-2-imagery-using-a/cloud-removal-on-sen12ms-cr)](https://paperswithcode.com/sota/cloud-removal-on-sen12ms-cr?p=cloud-removal-in-sentinel-2-imagery-using-a)
+---
+> [!NOTE]  
+> As I'm not able to properly replicate results and test the code, if you try out this code, encounter some issue and are able to solve it, you're very welcome to contribute to this repository with a Pull Request! This will help more people to make use of this model. Thank you :) 
+
+---
 
 ![Paper preview](doc/paper.JPG)
 >
