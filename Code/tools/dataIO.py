@@ -20,24 +20,24 @@ def make_dir(dir_path):
     return dir_path
 
 
-def get_train_val_test_filelists(listpath):
-    with open(listpath) as f:
-        reader = csv.reader(f, delimiter='\t')
-        filelist = list(reader)
+def get_train_val_test_filelists(listpath): 
+    with open(listpath) as f: 
+        reader = csv.reader(f, delimiter='\t') 
+        filelist = list(reader) 
+  
+        train_filelist = [] 
+        val_filelist = [] 
+        test_filelist = [] 
+        for  f in filelist: 
+            line_entries = f[0].split(sep=", ") 
+            if line_entries[0] == '1': 
+                train_filelist.append(f) 
+            if line_entries[0] == '2': 
+                val_filelist.append(f) 
+            if line_entries[0] == '3': 
+                test_filelist.append(f) 
+    return  train_filelist, val_filelist, test_filelist 
 
-    train_filelist = []
-    val_filelist = []
-    test_filelist = []
-    for f in filelist:
-        line_entries = f[0].split(sep=", ")
-        if line_entries[0] == '1':
-            train_filelist.append(line_entries)
-        if line_entries[0] == '2':
-            val_filelist.append(line_entries)
-        if line_entries[0] == '3':
-            test_filelist.append(line_entries)
-
-    return train_filelist, val_filelist, test_filelist
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Output%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
